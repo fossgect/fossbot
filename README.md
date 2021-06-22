@@ -1,2 +1,3 @@
-# discord-bots
-Bots used in our discord-server
+# org-inviter
+
+Our own discord bot
