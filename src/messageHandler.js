@@ -16,7 +16,7 @@ function messageHandler(client, message) {
 
     //if message is from incorrect channel;
     if (message.channel.id != process.env.BOT_CHANNEL) {
-      message.reply("This command is only allowed in **fossbot** channel");
+      message.lineReply("This command is only allowed in **fossbot** channel");
       return;
     }
 
@@ -39,7 +39,7 @@ function messageHandler(client, message) {
     }
 
     //if command not found
-    message.reply("Command does not exist\nUse : **!help**");
+    message.lineReply("Command does not exist\nUse : **!help**");
   }
 
   return;

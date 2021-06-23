@@ -19,6 +19,7 @@
   "homepage": "https://github.com/fossgect/discord-bots#readme",
   "dependencies": {
     "@octokit/core": "^3.5.1",
+    "discord-reply": "^0.1.2",
     "discord.js": "^12.5.3",
     "dotenv": "^10.0.0"
   },

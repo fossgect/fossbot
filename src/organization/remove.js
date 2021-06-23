@@ -7,13 +7,13 @@ const request = octokit.request;
 async function remove(message, args) {
   //if not admin - this is an admin only command
   if (!message.member.hasPermission("ADMINISTRATOR")) {
-    message.reply("Only admin can use this command");
+    message.lineReply("Only admin can use this command");
     return;
   }
 
   //only 1 arg allowed
   if (args[0] === undefined || args[1] !== undefined) {
-    message.reply("Invalid format\nUse : **!invite github-username**");
+    message.lineReply("Invalid format\nUse : **!invite github-username**");
     return;
   }
 
@@ -25,13 +25,13 @@ async function remove(message, args) {
   } catch (e) {
     //unable to remove user/invite
     console.log(e);
-    message.reply(`${e.response.data.message}`);
+    message.lineReply(`${e.response.data.message}`);
     return;
   }
 
   //user/invite removed
   console.log(`User ${args[0]} removed`);
-  message.reply(`Removed`);
+  message.lineReply(`Removed`);
   return;
 }
 

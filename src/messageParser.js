@@ -1,7 +1,7 @@
 //function to parse messages to find commmands and arguments
 function messageParser(message) {
   //Prefix for every command
-  const prefix = "!";
+  const prefix = "&";
 
   //remove leading or trailing spaces from the message content
   const content = message.content.trim();

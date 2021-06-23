@@ -8,7 +8,7 @@ let response;
 async function invite(message, args) {
   //only 1 arg allowed
   if (args[0] === undefined || args[1] !== undefined) {
-    message.reply("Invalid format\nUse : **!invite github-username**");
+    message.lineReply("Invalid format\nUse : **!invite github-username**");
     return;
   }
 
@@ -20,7 +20,7 @@ async function invite(message, args) {
   } catch (e) {
     //invalid username or other errors
     console.log(e);
-    message.reply(`${e.response.data.message}`);
+    message.lineReply(`${e.response.data.message}`);
     return;
   }
 
@@ -35,13 +35,13 @@ async function invite(message, args) {
   } catch (e) {
     //unable to send invite
     console.log(e);
-    message.reply(`${e.response.data.message}`);
+    message.lineReply(`${e.response.data.message}`);
     return;
   }
 
   //invite sent
   console.log(`User ${args[0]} invited`);
-  message.reply(`Invite sent`);
+  message.lineReply(`Invite sent`);
   return;
 }
 
