@@ -39,7 +39,7 @@ function messageHandler(client, message) {
     }
 
     //if command not found
-    message.lineReply("Command does not exist\nUse : **!help**");
+    message.lineReply("Command does not exist\nUse : **&help**");
   }
 
   return;
