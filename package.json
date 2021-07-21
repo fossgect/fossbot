@@ -2,7 +2,7 @@
   "name": "fossbot",
   "version": "1.0.0",
   "description": "Our own discord bot",
-  "main": "index.js",
+  "main": "bot.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "bot": "nodemon ./bot.js"
@@ -24,6 +24,7 @@
     "dotenv": "^10.0.0"
   },
   "devDependencies": {
+    "eslint": "^7.31.0",
     "nodemon": "^2.0.7"
   }
 }
