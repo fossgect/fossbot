@@ -103,7 +103,10 @@ dist
 # TernJS port file
 .tern-port
 
-#package-lock
+# package-lock
 package-lock.json
+
+# configuration secrets
+config.json
 
 .fossbot.pem
