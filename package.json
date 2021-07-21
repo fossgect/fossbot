@@ -9,14 +9,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/fossgect/discord-bots.git"
+    "url": "git+https://github.com/fossgect/fossbot.git"
   },
   "author": "",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/fossgect/discord-bots/issues"
+    "url": "https://github.com/fossgect/fossbot/issues"
   },
-  "homepage": "https://github.com/fossgect/discord-bots#readme",
+  "homepage": "https://github.com/fossgect/fossbot#readme",
   "dependencies": {
     "@octokit/core": "^3.5.1",
     "discord-reply": "^0.1.2",
