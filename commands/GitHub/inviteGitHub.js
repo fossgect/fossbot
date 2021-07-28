@@ -1,26 +1,34 @@
 const { ORG_TOKEN, ORG_NAME } = require("../../util/botConfig");
+
 // Octokit is a minimalistic library to utilize Github's REST API
 const { Octokit } = require("@octokit/core");
 const octokit = new Octokit({ auth: `${ORG_TOKEN}` });
 const request = octokit.request;
 let response;
+
 module.exports = {
     name: "invite",
     description: "Invite a user to FOSS GECT's GitHub organization.",
+    category: "GitHub",
+    args: true,
+    aliases: ["githubinvite", "ghinvite"],
+    usage: "<github-username>",
     async execute(message, args) {
-    // only 1 arg allowed
+
+        // only 1 arg allowed
         if (args.length != 1) {
             message.lineReply(`Invalid format\nUse : **${message.client.prefix}invite github-username**`);
             return;
         }
+
         // fetch user id
         try {
             response = await request(`GET /users/${args[0]}`, {
                 type: "private",
             });
         }
+        // invalid username or other errors
         catch (e) {
-            // invalid username or other errors
             console.log(e);
             message.lineReply(`${e.response.data.message}`);
             return;
@@ -35,8 +43,8 @@ module.exports = {
                 invitee_id: id,
             });
         }
+        // unable to send invite
         catch (e) {
-            // unable to send invite
             console.log(e);
             message.lineReply(`${e.response.data.message}`);
             return;

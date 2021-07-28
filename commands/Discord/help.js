@@ -12,7 +12,6 @@ module.exports = {
             .setColor("#04c46c")
             .attachFiles(["logo.png"])
             .setThumbnail("attachment://logo.png");
-
         embed.setDescription(`
 **General :**    
   &help
