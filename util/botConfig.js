@@ -1,11 +1,15 @@
-// try to access config.json file and read the values, if it is not present, use default values
+/**
+ * Try to access config.json and read the values.
+ * If it is not present, use values from enviornment variables.
+ */
+
 let config;
 
 try {
-    config = require("../config.json");
+  config = require('../config.json');
 }
 catch (error) {
-    config = null;
+  config = null;
 }
 
 exports.BOT_TOKEN = config ? config.BOT_TOKEN : process.env.BOT_TOKEN;
