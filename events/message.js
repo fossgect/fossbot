@@ -18,7 +18,7 @@ module.exports = {
         // checks whether the command exists
         const command = message.client.commands.get(commandName)
                 || message.client.commands.find(cmd => cmd.aliases && cmd.aliases.includes(commandName));
-        if (!command) return;
+        if (!command) return message.lineReply("❌ Uh-oh! That's not a valid command (yet).");
 
         // handle DMs to the bot
         if (message.channel.type === "dm") {
@@ -35,7 +35,7 @@ module.exports = {
 
         // checks for arguments
         if (command.args && !args.length) {
-            let reply = `You didn't provide any arguments, ${message.author}!`;
+            let reply = `❌ You didn't provide any arguments, ${message.author}!`;
 
             if (command.usage) {
                 reply += `\nThe proper usage would be: **${message.client.prefix}${command.name}`;
@@ -52,7 +52,7 @@ module.exports = {
         }
         catch (error) {
             console.error(error);
-            message.reply("❌ There was an error trying to execute that command!");
+            message.lineReply("❌ There was an error trying to execute that command!");
         }
     },
 };
