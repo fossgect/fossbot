@@ -1,6 +1,6 @@
 const fs = require("fs");
 require("dotenv").config();
-const { PREFIX, BOT_TOKEN } = require("./util/botConfig.");
+const { PREFIX, BOT_TOKEN } = require("./util/botConfig");
 
 const Discord = require("discord.js");
 
