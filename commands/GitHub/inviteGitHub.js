@@ -12,38 +12,34 @@ module.exports = {
     category: "GitHub",
     args: true,
     aliases: ["githubinvite", "ghinvite"],
+    permissions: "ADMINISTRATOR",
     usage: "<github-username>",
     async execute(message, args) {
 
-        // only 1 arg allowed
         if (args.length != 1) {
-            message.lineReply(`Invalid format\nUse : **${message.client.prefix}invite github-username**`);
+            message.lineReply(`Oops! That's not right..😕\nTry using: **${message.client.prefix}${this.name} ${this.usage}**`);
             return;
         }
 
-        // fetch user id
+        // fetch GitHub User ID
         try {
             response = await request(`GET /users/${args[0]}`, {
                 type: "private",
             });
         }
-        // invalid username or other errors
         catch (e) {
             console.log(e);
             message.lineReply(`${e.response.data.message}`);
             return;
         }
-
-        // get user id from previous response
         const id = response.data.id;
 
-        // sending invite
+        // send an invite from the GitHub organization
         try {
             response = await request(`POST /orgs/${ORG_NAME}/invitations`, {
                 invitee_id: id,
             });
         }
-        // unable to send invite
         catch (e) {
             console.log(e);
             message.lineReply(`${e.response.data.message}`);
@@ -52,7 +48,7 @@ module.exports = {
 
         // invite sent
         console.log(`User ${args[0]} invited.`);
-        message.lineReply("Invite sent.");
+        message.lineReply("✔ Invite sent!");
         return;
     },
 };
