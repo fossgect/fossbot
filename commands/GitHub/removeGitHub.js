@@ -7,7 +7,7 @@ const request = octokit.request;
 
 module.exports = {
   name: 'remove',
-  description: `Invite a user to FOSS GECT's GitHub organization.`,
+  description: `Remove a user from FOSS GECT's GitHub organization.`,
   category: 'GitHub',
   aliases: ['githubremove', 'ghremove'],
   permissions: 'ADMINISTRATOR',
