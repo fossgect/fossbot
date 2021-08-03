@@ -40,7 +40,7 @@ module.exports = {
             + 'to get a list of available commands.');
       }
       else{
-        reply.push(`**Name**: ${command.name}`);
+        reply.push(`**Name**: ${name}`);
         if (command.category) {
           reply.push(`**Category**: *${command.category}*`);
         }

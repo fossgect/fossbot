@@ -9,7 +9,6 @@ module.exports = {
   name: 'remove',
   description: `Invite a user to FOSS GECT's GitHub organization.`,
   category: 'GitHub',
-  args: true,
   aliases: ['githubremove', 'ghremove'],
   permissions: 'ADMINISTRATOR',
   usage: '<github-username>',

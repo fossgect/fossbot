@@ -44,19 +44,6 @@ module.exports = {
       }
     }
 
-    // checks for arguments
-    if (command.args && !args.length) {
-      let reply = `❌ You didn't provide any arguments, ${message.author}!`;
-
-      if (command.usage) {
-        reply += '\nThe proper usage would be: '
-          + `**${message.client.prefix}${command.name}`;
-        reply += ` ${command.usage}**`;
-      }
-
-      return message.lineReply(reply);
-    }
-
     // runs the command
     try {
       command.execute(message, args);

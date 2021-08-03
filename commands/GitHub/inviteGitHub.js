@@ -10,7 +10,6 @@ module.exports = {
   name: 'invite',
   description: `Invite a user to FOSS GECT's GitHub organization.`,
   category: 'GitHub',
-  args: true,
   aliases: ['githubinvite', 'ghinvite'],
   permissions: 'ADMINISTRATOR',
   usage: '<github-username>',
