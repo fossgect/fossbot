@@ -46,8 +46,8 @@ module.exports = {
 
     // runs the command
     try {
-      command.execute(message, args);
       console.log(`${message.author.tag} ran the command "${command.name}"`);
+      command.execute(message, args);
     }
     catch (error) {
       console.error(error);
