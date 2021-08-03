@@ -10,6 +10,13 @@ module.exports = {
   name: 'message',
   execute(message) {
 
+    // handle DMs to the bot
+    if (message.channel.type === 'dm') {
+      return message.lineReply(
+        `Can't execute commands inside DMs. 😅\nTalk to me from the server.`,
+      );
+    }
+
     // checks whether the message is a command,
     // whether it is from the bot itself,
     // or whether it is a message in a non-bot channel
@@ -27,13 +34,6 @@ module.exports = {
           .find(cmd => cmd.aliases && cmd.aliases.includes(commandName));
     if (!command) {
       return message.lineReply(`❌ Uh-oh! That's not a valid command (yet).`);
-    }
-
-    // handle DMs to the bot
-    if (message.channel.type === 'dm') {
-      return message.lineReply(
-        `Can't execute commands inside DMs. 😅\nTalk to me from the server.`,
-      );
     }
 
     // check whether the user has permission to execute the command
