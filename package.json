@@ -2,21 +2,21 @@
   "name": "fossbot",
   "version": "1.0.0",
   "description": "Our own discord bot",
-  "main": "index.js",
+  "main": "bot.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "bot": "nodemon ./bot.js"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/fossgect/discord-bots.git"
+    "url": "git+https://github.com/fossgect/fossbot.git"
   },
   "author": "",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/fossgect/discord-bots/issues"
+    "url": "https://github.com/fossgect/fossbot/issues"
   },
-  "homepage": "https://github.com/fossgect/discord-bots#readme",
+  "homepage": "https://github.com/fossgect/fossbot#readme",
   "dependencies": {
     "@octokit/core": "^3.5.1",
     "discord-reply": "^0.1.2",
@@ -24,6 +24,7 @@
     "dotenv": "^10.0.0"
   },
   "devDependencies": {
+    "eslint": "^7.31.0",
     "nodemon": "^2.0.7"
   }
 }
