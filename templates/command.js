@@ -24,6 +24,11 @@ module.exports = {
 
   // the function to be executed when the command is called
   async execute(message, args) {
+    // The message object, and the arguments passed
+    // to the command (as an array) are passed to
+    // every command when it is called.
+    // For more information about the message object, visit:
+    // https://discord.js.org/#/docs/main/stable/class/Message
 
     if (args.length != 1) {
       message.lineReply('Hi, stranger!');
